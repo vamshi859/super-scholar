@@ -30,15 +30,14 @@ export const updateProject = async (req, res) => {
   const { stage } = req.body;
   if (stage === 1 || stage === 2 || stage === 3) {
     try {
-      await Product.findOneAndUpdate(
+     const updatedProject =  await Product.findOneAndUpdate(
         { id },
         {
           $set: {
             stage,
           },
-        }
+        },{new:true}
       );
-      const updatedProject = await Product.findOne({ id });
       if (updatedProject === null) {
         res.status(400).json("No requirements");
       }
