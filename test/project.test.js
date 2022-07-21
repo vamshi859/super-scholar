@@ -59,7 +59,7 @@ describe("Project APIs", () => {
 
     it("Stage should be 1,2 or 3", () => {
       const id = 1;
-      const stage = 4;
+      const stage = 2;
       const body = {
         stage,
       };
