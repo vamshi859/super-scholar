@@ -3,15 +3,15 @@ import mongoose from "mongoose";
 const projectSchema = mongoose.Schema({
   id: {
     type: Number,
-    require: true,
+    required: true,
   },
   title: {
     type: String,
-    require: true,
+    required: true,
   },
   stage: {
     type: Number,
-    require: true,
+    required: true,
   },
 });
 

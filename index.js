@@ -6,8 +6,10 @@ import boardRoute from "./routes/boards.js";
 import authRoute from "./routes/auth.js";
 import passport from "passport";
 import local from "./strategies/local.js";
+import dotenv from "dotenv";
 // const store = new session.MemoryStore();
 const app = express();
+dotenv.config();
 // app.use(session({
 //   secret: 'vamshi',
 //   cookie: {maxAge: 30000},
@@ -26,8 +28,7 @@ app.use("/", boardRoute);
 app.use("/auth",authRoute);
 const PORT = 5001;
 
-const CONNECTION_URL =
-  "mongodb+srv://vamshi:vamshi@cluster0.q5u15.mongodb.net/?retryWrites=true&w=majority";
+const CONNECTION_URL = process.env.CONNECTION_URL;
 
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
