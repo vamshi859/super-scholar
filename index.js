@@ -26,7 +26,7 @@ app.use(cors());
 
 app.use("/", boardRoute);
 app.use("/auth",authRoute);
-const PORT = 5001;
+const PORT = process.env.PORT;
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 
